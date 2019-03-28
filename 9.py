@@ -8,7 +8,6 @@ for i in arr:  # 遍历数组中的元素
         presum = int(i)  # 如果之前的累加和小于0，则从当前值进行累加
     else:
         presum += int(i)
-        # 如果是大于等于0，则将当前的数加到当前最大子数组中
     if presum > maxsum:
         maxsum = presum
 print (maxsum)
