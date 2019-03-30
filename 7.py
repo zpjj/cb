@@ -1,21 +1,27 @@
 #!/user/bin/env python
 # _*_ coding: utf-8 _*_
+"""
+  author:zhangPeiJing  date:On March 30
+"""
 class Solution:
-    #找到最大子数组和
+    #Find the sum of the largest subarrays
  def find_Sum(self,arr):
-    if not arr:         #数组为空，则返回空
+     # Returns null if the array is empty
+    if not arr:
         return
-    maxSum=int(arr[0])  #定义为第一个为最大
-    preSum=0            #存放之前的累加和
-    for i in arr:      #遍历数组中的元素
-        if preSum<0:   #如果之前的累加和小于0，则从当前值进行累加
+    maxSum=int(arr[0])
+    preSum=0
+    for i in arr:
+        # If the previous sum is less than 0, it is accumulated from the current value
+        if preSum<0:
             preSum=int(i)
         else:
             preSum+=int(i)
+        #Find the maximum
         if preSum>maxSum:
             maxSum=preSum
     return maxSum
-     #单元测试用例
+     #Unit test cases
 if __name__ == '__main__':
     arrays = [[1, 2, 3, 6, 2], [-2, -4, -1, -3], [-1, 3, 6, 22], [21, 2, -3, -4], []]
     s = Solution()
